@@ -6,10 +6,24 @@ junitVersion = "1.3.0"
 espressoCore = "3.7.0"
 lifecycleRuntimeKtx = "2.10.0"
 activityCompose = "1.13.0"
-kotlin = "2.0.21"
-composeBom = "2024.09.00"
+kotlin = "2.3.20"
+composeBom = "2026.03.01"
 appcompat = "1.7.1"
 material = "1.13.0"
+
+hilt = "2.59.1"
+kspv = "2.3.4"
+serialization = "2.3.0"
+jsonSeerializtion = "1.10.0"
+hiltNavigation = "1.3.0"
+navCompose = "2.9.7"
+accompanist = "0.37.3"
+runtime = "1.10.2"
+plainNavigation = "2.9.7"
+coil = "2.7.0"
+ktor = "3.4.0"
+room = "2.8.4"
+kotlinxTest = "1.10.2"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -29,8 +43,64 @@ androidx-compose-material3 = { group = "androidx.compose.material3", name = "mat
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 
+androidx-navigation-compose = { group = "androidx.navigation", name = "navigation-compose-android", version.ref = "navCompose" }
+androidx-navigation-compose-plain = { group = "androidx.navigation", name = "navigation-compose", version.ref = "plainNavigation" }
+google-accompanist = { group = "com.google.accompanist", name = "accompanist-permissions", version.ref = "accompanist" }
+androidx-material-icons-extended = { group = "androidx.compose.material", name = "material-icons-extended" }
+kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "kotlinxTest" }
+
+#Images Handled with Coil
+coil-io = { group = "io.coil-kt", name = "coil-compose", version.ref = "coil" }
+
+#ktor
+androidx-ktor-client = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
+androidx-ktor-okhttp = { module = "io.ktor:ktor-client-okhttp", version.ref = "ktor" }
+androidx-ktor-conttent-negotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktor" }
+androidx-ktor-serialization = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "ktor" }
+androidx-ktor-logging = { module = "io.ktor:ktor-client-logging", version.ref = "ktor" }
+androidx-ktor-client-websockets = { module = "io.ktor:ktor-client-websockets", version.ref = "ktor" }
+androidx-ktor-android = { module = "io.ktor:ktor-client-android", version.ref = "ktor" }
+androidx-ktor-test-server = { module = "io.ktor:ktor-server-test-host", version.ref = "ktor" }
+
+
+# Dagger Hilt
+google-dagger-hilt = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
+google-dagger-hilt-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hilt" }
+json-serialization = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "jsonSeerializtion" }
+hilt-navigation-compose = { group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "hiltNavigation" }
+androidx-compose-runtime = { group = "androidx.compose.runtime", name = "runtime", version.ref = "runtime" }
+
+# Room
+androidx-room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
+androidx-room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
+androidx-room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
+
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 android-library = { id = "com.android.library", version.ref = "agp" }
+google-dagger-hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
+google-ksp = { id = "com.google.devtools.ksp", version.ref = "kspv" }
+kotlinx-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "serialization" }
+[bundles]
+ktor = [
+    "androidx-ktor-client",
+    "androidx-ktor-conttent-negotiation",
+    "androidx-ktor-logging",
+    "androidx-ktor-okhttp",
+    "androidx-ktor-serialization",
+    "androidx-ktor-client-websockets",
+    "androidx-ktor-android",
+    "androidx-ktor-test-server"
+]
+dagger-hilt = [
+    "google-dagger-hilt",
+    "hilt-navigation-compose",
+]
+room = [
+    "androidx-room-ktx",
+    "androidx-room-runtime"
+]
+
+
 
