@@ -24,4 +24,9 @@ dependencyResolutionManagement {
 
 rootProject.name = "ChatOneFiyah"
 include(":app")
- 
+include(":common:domain")
+include(":common:data")
+include(":common:framework")
+include(":feature:createchat")
+include(":feature:conversation")
+include(":feature:chat")
