@@ -1,6 +1,12 @@
 package com.snowyfox.conversation.screens
 
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 import com.snowyfox.conversation.model.Conversation
 
 
@@ -9,5 +15,15 @@ fun ConversationList(
     conversations: List<Conversation>,
     onConversationClicked: (chatId: String) -> Unit,
 ){
-
+    LazyColumn {
+        items(conversations){ conversation ->
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .clickable { onConversationClicked(conversation.id)}
+            ) {
+                ConversationItem(conversation)
+            }
+        }
+    }
 }
