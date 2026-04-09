@@ -10,7 +10,7 @@ import androidx.navigation.navDeepLink
 import androidx.navigation.toRoute
 import kotlinx.serialization.Serializable
 
-@Serializable
+
 interface Routes {
     @Serializable
     data object StartScreen : Routes
