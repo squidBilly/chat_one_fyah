@@ -24,5 +24,4 @@ fun Avatar(
             .clip(CircleShape),
         contentScale = ContentScale.Crop,
     )
-
 }

@@ -36,6 +36,8 @@ android {
 
 dependencies {
 
+    implementation(project(":common:framework"))
+
     implementation(libs.coil.io)
     implementation(libs.androidx.navigation.compose.plain)
     implementation(libs.androidx.navigation.compose)
