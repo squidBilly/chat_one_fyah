@@ -23,7 +23,11 @@ interface Routes {
 
     @Serializable
     data object Calls : Routes
+
+    @Serializable
+    data object NewConversation : Routes
 }
+
 
 @Composable
 fun FiyahChatNavigation(navController: NavHostController) {
@@ -32,17 +36,26 @@ fun FiyahChatNavigation(navController: NavHostController) {
     }
 }
 
-fun NavGraphBuilder.addConversationList(navController: NavController) {
+private fun NavGraphBuilder.addConversationList(navController: NavController) {
     composable<Routes.ConversationList> {
 
     }
+
 }
-fun NavGraphBuilder.chatScreen(){
+
+private fun NavGraphBuilder.addNewConversation(navController: NavController) {
+    composable<Routes.NewConversation> {
+
+    }
+
+}
+
+private fun NavGraphBuilder.addChat(navController: NavController) {
     composable<Routes.ChatScreen>(
         deepLinks = listOf(
             navDeepLink<Routes.ChatScreen>(basePath = "https://whatspack.com/chat?chatId={chatId}")
         )
-    ){
+    ) {
         val chatId = it.toRoute<Routes.ChatScreen>().chatId
 
     }

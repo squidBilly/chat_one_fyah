@@ -1,12 +1,19 @@
 package com.snowyfox.chat.di
 
+import com.snowyfox.chat.network.WebsocketClient
 import dagger.Module
+import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import io.ktor.client.HttpClient
+import javax.inject.Named
 
 @InstallIn(SingletonComponent::class)
 @Module
 object ChatModule {
+    @Provides
+    @Named(Constants.WEBSOCKET_CLIENT)
+    fun providesWebsocketHttpClient(): HttpClient = WebsocketClient.client
 
 }
 
