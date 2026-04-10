@@ -2,7 +2,8 @@ package com.snowyfox.chat.ui.viewmodels
 
 import androidx.lifecycle.ViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
 @HiltViewModel
-class ChatViewModel: ViewModel() {
+class ChatViewModel @Inject constructor(): ViewModel() {
 }

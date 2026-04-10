@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.google.ksp)
     alias(libs.plugins.kotlinx.serialization)
+    alias(libs.plugins.google.dagger.hilt)
 }
 
 android {
@@ -40,10 +41,19 @@ android {
         compose = true
         viewBinding = true
     }
+    packaging {
+        resources {
+            excludes += "/META-INF/{AL2.0,LGPL2.1}"
+            excludes += "/META-INF/versions/**"
+            excludes += "/META-INF/native-image/native-image.properties"
+            excludes += "/META-INF/native-image/reflect-config.json"
+        }
+    }
 }
 
 dependencies {
     implementation(project(":feature:chat"))
+    implementation(project(":common:framework"))
     implementation(project(":feature:conversation"))
     implementation(project(":feature:createchat"))
 

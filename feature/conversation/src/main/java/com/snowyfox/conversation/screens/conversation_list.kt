@@ -11,7 +11,7 @@ import com.snowyfox.conversation.model.Conversation
 
 
 @Composable
-fun ConversationList(
+fun ConversationLazyList(
     conversations: List<Conversation>,
     onConversationClicked: (chatId: String) -> Unit,
 ){
