@@ -43,10 +43,9 @@ android {
     }
     packaging {
         resources {
+            pickFirsts.add("META-INF/DEPENDENCIES")
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
-            excludes += "/META-INF/versions/**"
-            excludes += "/META-INF/native-image/native-image.properties"
-            excludes += "/META-INF/native-image/reflect-config.json"
+
         }
     }
 }
