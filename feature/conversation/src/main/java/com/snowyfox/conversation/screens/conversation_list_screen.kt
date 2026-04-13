@@ -1,6 +1,5 @@
 package com.snowyfox.conversation.screens
 
-import android.R.attr.text
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.pager.HorizontalPager
 import androidx.compose.foundation.pager.rememberPagerState
