@@ -40,12 +40,12 @@ object ChatModule {
 @Module
 abstract class ChatBindingModule {
     @Binds
-    abstract fun providesChatRoomRepository(
+    abstract fun bindsChatRoomRepository(
         chatroomRepository: ChatRoomRepository
     ): IChatRoomRepository
 
     @Binds
-    abstract fun providesMessagesRepository(
+    abstract fun bindsMessagesRepository(
         messagesRepository: MessagesRepository
     ): IMessageRepository
 }
