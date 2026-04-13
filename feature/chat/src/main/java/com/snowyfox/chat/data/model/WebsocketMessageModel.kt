@@ -16,6 +16,19 @@ data class WebsocketMessageModel(
     companion object {
         const val TEXT_TYPE = "TEXT"
         const val TYPE_IMAGE = "IMAGE"
+        fun fromDomain(messages: Messages): WebsocketMessageModel {
+            return WebsocketMessageModel(
+                id = messages.id,
+                message = messages.content,
+                senderName = messages.senderName,
+                senderAvatar = messages.senderAvatar,
+                timestamp = messages.timestamp,
+                isMine = messages.isMine,
+                messageType = messages.fromContentType(),
+                messageDescription = messages.contentDescription
+
+            )
+        }
     }
 
     fun toDomain(): Messages =
@@ -29,20 +42,6 @@ data class WebsocketMessageModel(
             contentDescription = messageDescription,
             contentType = toContentType()
         )
-
-    fun fromDomain(messages: Messages): WebsocketMessageModel {
-        return WebsocketMessageModel(
-            id = messages.id,
-            message = messages.content,
-            senderName = messages.senderName,
-            senderAvatar = messages.senderAvatar,
-            timestamp = messages.timestamp,
-            isMine = messages.isMine,
-            messageType = messages.fromContentType(),
-            messageDescription = messages.contentDescription
-
-        )
-    }
 
     fun toContentType(): Messages.ContentType {
         return when (messageType) {
