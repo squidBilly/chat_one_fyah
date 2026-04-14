@@ -1,9 +1,11 @@
 plugins {
+
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.google.ksp)
     alias(libs.plugins.kotlinx.serialization)
     alias(libs.plugins.google.dagger.hilt)
+    alias(libs.plugins.google.gms.google.services)
 }
 
 android {
@@ -37,15 +39,19 @@ android {
 }
 
 dependencies {
+    implementation(project(":common:domain"))
+    implementation(project(":common:framework"))
     implementation(libs.google.accompanist)
     implementation(libs.google.dagger.hilt)
     implementation(libs.json.serialization)
+    implementation(libs.firebase.messaging)
     ksp(libs.google.dagger.hilt.compiler)
     implementation(libs.hilt.navigation.compose)
     implementation(libs.androidx.navigation.compose)
     implementation(libs.bundles.ktor)
     ksp(libs.androidx.room.compiler)
     implementation(libs.bundles.room)
+    implementation(libs.kotlinx.playservices)
 
     testImplementation(libs.kotlinx.coroutines.test)
 
