@@ -1,17 +1,31 @@
 package com.snowyfox.chat.models
 
-import com.snowyfox.chat.ui.screens.ChatScreen
+import com.snowyfox.framework.utils.map
 
 data class Chat(
     val id: String? = null,
     val name: String? = null,
     val avatar: String? = null,
-){
-    fun ChatRoom.toUI() = run {
-        Chat(
-            id = this.id,
-            name = this.name,
-            avatar = this.avatar
-        )
+) {
+    companion object {
+        fun Chat.toChatRoom(): ChatRoom {
+            return map {
+                ChatRoom(
+                    id = it.id ?: "",
+                    name = it.name ?: "",
+                    avatar = it.avatar ?: "",
+                    lastMessage = emptyList()
+                )
+            }
+        }
     }
 }
+
+fun ChatRoom.toUI() = run {
+    Chat(
+        id = this.id,
+        name = this.name,
+        avatar = this.avatar
+    )
+}
+

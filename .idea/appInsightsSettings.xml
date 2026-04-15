@@ -8,10 +8,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="PLACEHOLDER" />
-                  <option name="mobileSdkAppId" value="" />
-                  <option name="projectId" value="" />
-                  <option name="projectNumber" value="" />
+                  <option name="appId" value="com.snowyfox.chatonefiyah" />
+                  <option name="mobileSdkAppId" value="1:460493823636:android:8c4e32d1ec57ddeaaf1e81" />
+                  <option name="projectId" value="chatsdemo-51f56" />
+                  <option name="projectNumber" value="460493823636" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "460493823636",
+    "project_id": "chatsdemo-51f56",
+    "storage_bucket": "chatsdemo-51f56.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:460493823636:android:8c4e32d1ec57ddeaaf1e81",
+        "android_client_info": {
+          "package_name": "com.snowyfox.chatonefiyah"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBwls9C8AloI2dvMwKBYOGRbofUBVnr_CM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

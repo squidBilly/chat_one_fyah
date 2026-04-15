@@ -4,6 +4,7 @@ plugins {
     alias(libs.plugins.google.ksp)
     alias(libs.plugins.kotlinx.serialization)
     alias(libs.plugins.google.dagger.hilt)
+    alias(libs.plugins.google.gms.google.services)
 }
 
 android {
@@ -63,8 +64,9 @@ dependencies {
     implementation(libs.hilt.navigation.compose)
     implementation(libs.androidx.navigation.compose)
     implementation(libs.bundles.ktor)
-    testImplementation(libs.kotlinx.coroutines.test)
+    implementation(platform(libs.firebase.bom))
 
+    testImplementation(libs.kotlinx.coroutines.test)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)

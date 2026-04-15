@@ -50,11 +50,13 @@ dependencies {
     implementation(libs.androidx.compose.ui.graphics)
     implementation(libs.androidx.compose.material3)
     implementation(platform(libs.androidx.compose.bom))
+    implementation(platform(libs.firebase.bom))
     implementation(libs.androidx.compose.runtime)
     implementation(libs.material)
     implementation(libs.coil.io)
     implementation(libs.androidx.material.icons.extended)
     implementation(libs.androidx.compose.ui.tooling.preview)
+    implementation(libs.firebase.storage)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
