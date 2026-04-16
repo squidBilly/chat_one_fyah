@@ -65,6 +65,11 @@ dependencies {
     implementation(libs.androidx.navigation.compose)
     implementation(libs.bundles.ktor)
     implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.storage)
+
+    implementation(libs.androidx.work)
+    implementation(libs.androidx.hilt.work)
+
 
     testImplementation(libs.kotlinx.coroutines.test)
     implementation(libs.androidx.core.ktx)

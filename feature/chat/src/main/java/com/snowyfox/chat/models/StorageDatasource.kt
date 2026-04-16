@@ -1,11 +1,23 @@
 package com.snowyfox.chat.models
 
-import com.google.firebase.Firebase
-import com.google.firebase.firestore.FirebaseFirestore
-
+import androidx.core.net.toUri
+import com.google.firebase.storage.FirebaseStorage
+import kotlinx.coroutines.tasks.await
+import java.io.File
 import javax.inject.Inject
 
 class StorageDatasource @Inject constructor(
-    private val firebaseStorage: FirebaseFirestore
+    private val firebaseStorage: FirebaseStorage
 ) {
+    suspend fun uploadFile(localFile: File, remotePath: String){
+        val storageRef =
+            firebaseStorage.reference.child(remotePath)
+        storageRef.putFile(localFile.toUri()).await()
+
+    }
+    suspend fun downloadFile(remotePath: String, localFile: File){
+        val storageRef =
+            firebaseStorage.reference.child(remotePath)
+        storageRef.getFile(localFile).await()
+    }
 }

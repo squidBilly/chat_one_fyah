@@ -41,6 +41,8 @@ android {
 
 dependencies {
     implementation(project(":common:framework"))
+    implementation(project(":common:data"))
+    implementation(libs.google.gson)
     implementation(libs.androidx.navigation.compose)
     implementation(libs.androidx.navigation.compose)
     implementation(libs.androidx.compose.ui)
@@ -56,6 +58,7 @@ dependencies {
     implementation(libs.coil.io)
     implementation(libs.androidx.material.icons.extended)
     implementation(libs.androidx.compose.ui.tooling.preview)
+    implementation(libs.firebase.firestore)
     implementation(libs.firebase.storage)
 
     testImplementation(libs.junit)
