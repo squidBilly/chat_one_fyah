@@ -1,14 +1,15 @@
 package com.snowyfox.chatonefiyah
 
 import android.content.Context
+import androidx.hilt.work.HiltWorker
 import androidx.work.CoroutineWorker
 import androidx.work.WorkerParameters
 import com.snowyfox.chat.usecases.MessageUploadCase
 import dagger.assisted.Assisted
 import dagger.assisted.AssistedInject
 import kotlinx.coroutines.coroutineScope
-import javax.inject.Inject
 
+@HiltWorker
 class UploadMessageWorker @AssistedInject constructor(
     @Assisted appContext: Context,
     @Assisted workerParams: WorkerParameters,
